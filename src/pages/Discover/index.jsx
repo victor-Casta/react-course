@@ -1,6 +1,8 @@
+import { Navbar } from '../../components/Navbar'
+
 function Discover() {
   return (
-    <h2>discover</h2>
+    <Navbar />
   )
 }
 

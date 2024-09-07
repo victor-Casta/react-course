@@ -1,6 +1,8 @@
+import { Navbar } from '../../components/Navbar'
+
 function MyAccount() {
   return (
-    <h1>My Account</h1>
+    <Navbar />
   )
 }
 

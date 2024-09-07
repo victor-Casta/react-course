@@ -29,36 +29,58 @@ function Navbar() {
     }
   };
 
+  const isActiveStyle = 'underline underline-offset-4 decoration-[#6D8450] decoration-2'
+
+
   return (
     <>
-      <nav>
+      <nav className="nav-container">
         <section className="logo">
-          <h2>PUREM <br /> ODA</h2>
+          <NavLink to={'/'} >
+            <h2>PUREM <br /> ODA</h2>
+          </NavLink>
         </section>
         <section className="links">
           <ul>
             <li>
-              <NavLink to={'/womenswear'}>
+              <NavLink
+                to={'/womenswear'}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : undefined
+                }
+              >
                 womenswear
               </NavLink>
             </li>
             <li>
-              <NavLink to={'/menswear'}>
+              <NavLink to={'/menswear'}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : undefined
+                }>
                 menswear
               </NavLink>
             </li>
             <li>
-              <NavLink to={'/kids'}>
+              <NavLink to={'/kids'}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : undefined
+                }>
                 kids
               </NavLink>
             </li>
             <li>
-              <NavLink to={'/sale'}>
+              <NavLink to={'/sale'}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : undefined
+                }>
                 sale
               </NavLink>
             </li>
             <li>
-              <NavLink to={'/discover'}>
+              <NavLink to={'/discover'}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : undefined
+                }>
                 discover
               </NavLink>
             </li>

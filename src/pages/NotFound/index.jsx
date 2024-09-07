@@ -1,6 +1,8 @@
+import { Navbar } from '../../components/Navbar'
+
 function NotFound() {
   return(
-    <h1>404</h1>
+    <Navbar />
   )
 }
 

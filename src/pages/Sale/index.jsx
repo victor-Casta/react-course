@@ -1,6 +1,8 @@
+import { Navbar } from "../../components/Navbar"
+
 function Sale() {
   return (
-    <h2>Sale</h2>
+    <Navbar />
   )
 }
 

@@ -1,6 +1,8 @@
+import { Navbar } from '../../components/Navbar'
+
 function MenSwear() {
   return (
-    <h2>Men Swear</h2>
+    <Navbar />
   )
 }
 
