@@ -1,8 +1,8 @@
-import { Navbar } from '../../components/Navbar'
-
 function NotFound() {
-  return(
-    <Navbar />
+  return (
+    <div>
+      404
+    </div>
   )
 }
 

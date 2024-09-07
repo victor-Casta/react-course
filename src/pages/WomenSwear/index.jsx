@@ -1,8 +1,14 @@
+import { Layout } from "../../components/Layout"
 import { Navbar } from "../../components/Navbar"
 
 function WomenSwear() {
-  return(
-    <Navbar />
+  return (
+    <>
+      <Navbar />
+      <Layout>
+        Women Swear
+      </Layout>
+    </>
   )
 }
 

@@ -1,9 +1,11 @@
-import { Navbar } from "../../components/Navbar"
+import { Layout } from "../../components/Layout"
 
 function SigIn() {
-  return(
-    <Navbar />
+  return (
+    <Layout>
+      Sing in
+    </Layout>
   )
 }
 
-export{ SigIn }
+export { SigIn }

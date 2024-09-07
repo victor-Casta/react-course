@@ -1,8 +1,14 @@
+import { Layout } from '../../components/Layout'
 import { Navbar } from '../../components/Navbar'
 
 function Discover() {
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <Layout>
+        Discover
+      </Layout>
+    </>
   )
 }
 

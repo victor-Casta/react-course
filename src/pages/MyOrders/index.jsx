@@ -1,8 +1,14 @@
+import { Layout } from '../../components/Layout'
 import { Navbar } from '../../components/Navbar'
 
 function MyOrders() {
-  return(
-    <Navbar />
+  return (
+    <>
+      <Navbar />
+      <Layout>
+        My orders
+      </Layout>
+    </>
   )
 }
 
