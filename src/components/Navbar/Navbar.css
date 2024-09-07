@@ -1,0 +1,56 @@
+nav {
+  @apply w-[97%] h-14 mt-3 px-6 flex justify-between items-center fixed max-w-[1536px] rounded-lg border-solid border-2 border-[#D7D7D6];
+}
+
+nav .logo h2 {
+  @apply font-fraunces font-semibold leading-none;
+}
+
+nav .links {
+  @apply hidden xl:inline-block;
+}
+nav .links ul {
+  @apply flex gap-12;
+}
+nav .links ul li {
+  @apply uppercase font-noto font-semibold text-sm;
+}
+
+nav .actions {
+  @apply flex gap-3 items-center;
+}
+nav .actions .search {
+  @apply relative hidden md:inline-block;
+}
+nav .actions .search input {
+  @apply w-36 h-8 pl-8 bg-[#F5F5F4] rounded-xl;
+}
+nav .actions .search .search-icon {
+  @apply absolute z-20 top-2 left-2 stroke-1 cursor-pointer;
+}
+nav .actions .heart-icon {
+  @apply stroke-1 cursor-pointer;
+}
+nav .actions .shopping-car {
+  @apply relative cursor-pointer;
+}
+nav .actions .shopping-car span {
+  @apply w-3 h-3 flex justify-center items-center absolute top-[-2px] left-3 text-[7px] bg-red-500 rounded-full text-white font-noto font-bold;
+}
+
+nav .burguer-menu {
+  @apply inline-block xl:hidden cursor-pointer;
+}
+
+.mobile-menu {
+  @apply w-[97%] h-screen mt-2 px-4 pt-4 bg-white z-30 rounded-lg border-solid border-2 border-[#D7D7D6] hidden relative transition-transform;
+}
+.mobile-menu li {
+  @apply my-4 font-noto uppercase text-lg font-semibold;
+}
+.mobile-menu li a {
+  @apply flex items-center gap-2;
+}
+.mobile-menu .close-icon {
+  @apply stroke-2 absolute right-4 top-7
+}
