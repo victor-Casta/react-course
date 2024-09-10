@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import hat1 from '../../assets/hat1.png'
 import hat2 from '../../assets/hat2.png'
 import model1 from '../../assets/model1.jpg'
@@ -34,6 +35,32 @@ function PrincipalContent() {
     }
   }, []);
   
+  const tl = gsap.timeline()
+
+  tl.fromTo(
+    '.message',
+    { x: -1400, scale: 0, opacity: 0 },
+    { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+    '=='
+  )
+  tl.fromTo(
+    '.arrow, .learn, .contact, .puntero',
+    { x: -1400, scale: 0, opacity: 0, rotate: 180 },
+    { x: 0, scale: 1, opacity: 1, duration: 2, rotate: 0, ease: 'power1.inOut' },
+    '+'
+  )
+  tl.fromTo(
+    '.container-states',
+    { y:900, scale: 0, opacity: 0 },
+    { y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+    '=='
+  )
+  tl.fromTo(
+    '.second-content',
+    { x: 1400, scale: 0, opacity: 0 },
+    { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+    '=='
+  )
 
   return (
     <section className="principal-content">
@@ -42,7 +69,7 @@ function PrincipalContent() {
           <div>
             <div className="title-container">
               <p>for</p>
-              <svg width="151" height="16" viewBox="0 0 151 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className='arrow' width="151" height="16" viewBox="0 0 151 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M150.707 8.70711C151.098 8.31658 151.098 7.68342 150.707 7.29289L144.343 0.928932C143.953 0.538408 143.319 0.538408 142.929 0.928932C142.538 1.31946 142.538 1.95262 142.929 2.34315L148.586 8L142.929 13.6569C142.538 14.0474 142.538 14.6805 142.929 15.0711C143.319 15.4616 143.953 15.4616 144.343 15.0711L150.707 8.70711ZM0 9H150V7H0V9Z" fill="black" />
               </svg>
             </div>
