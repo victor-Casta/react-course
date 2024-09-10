@@ -1,13 +1,14 @@
 import { Layout } from "../../components/Layout"
 import { Navbar } from "../../components/Navbar"
+import { PrincipalContent } from "../../components/PrincipalContent"
 
 function Home() {
-  return(
+  return (
     <>
-    <Navbar />
-    <Layout>
-      Home
-    </Layout>
+      <Navbar />
+      <Layout>
+        <PrincipalContent />
+      </Layout>
     </>
   )
 }

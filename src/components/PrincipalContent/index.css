@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.principal-content {
+  @apply w-full h-[1200px] sm:h-[700px] flex gap-4 flex-col md:flex-row;
+}
+
+.principal-content .first-content {
+  @apply w-full h-[1000px] md:h-auto md:w-[50%] flex flex-col gap-4;
+}
+
+.principal-content .first-content .message {
+  @apply h-[500px] md:h-[70%] flex flex-col justify-between bg-[#DADAD8] rounded-2xl px-5 py-8;
+}
+.principal-content .first-content .message div:nth-child(1) .title-container {
+  @apply flex items-center gap-4;
+}
+.principal-content .first-content .message div:nth-child(1) p {
+  @apply font-fraunces font-black text-3xl sm:text-5xl uppercase text-black leading-tight;
+}
+.principal-content .first-content .message div:nth-child(2) p {
+  @apply font-noto text-[12px] text-black tracking-[1.3px] font-medium;
+}
+
+
+.principal-content .first-content .container-states {
+  @apply h-[30%] flex gap-4;
+}
+
+.principal-content .first-content .container-states div {
+  @apply w-[50%] rounded-2xl relative overflow-hidden flex flex-col items-center;
+}
+.principal-content .first-content .container-states .rip-stop {
+  @apply bg-[#B2B2B2];
+}
+.principal-content .first-content .container-states .rip-stop img {
+  @apply absolute bottom-[-94px];
+}
+.principal-content .first-content .container-states div p {
+  @apply absolute bottom-[9px] left-4 font-fraunces font-black uppercase text-white text-[12px] sm:text-xl;
+}
+.principal-content .first-content .container-states .insulated {
+  @apply bg-[#5A6C63];
+}
+.principal-content .first-content .container-states .insulated img {
+  @apply absolute bottom-[-39px];
+}
+
+
+.principal-content .second-content {
+  @apply w-full h-auto sm:h-[900px] md:h-auto md:w-[50%] rounded-2xl overflow-hidden relative;
+}
+.principal-content .second-content .links {
+  @apply absolute bottom-6 right-4 flex gap-3;
+}
+.principal-content .second-content .links .learn {
+  @apply w-[150px] h-[34px] pl-3 pr-[2px] flex justify-between items-center bg-white rounded-3xl;
+  border: 2px solid #000;
+}
+.principal-content .second-content .links .learn p {
+  @apply font-noto text-[12px] uppercase font-semibold;
+}
+.principal-content .second-content .links .learn div {
+  @apply w-7 h-7 bg-black rounded-full flex justify-center items-center;
+}
+
+.principal-content .second-content .links .contact {
+  @apply w-[150px] h-[34px] pl-3 pr-[2px] flex justify-between items-center bg-transparent rounded-3xl;
+  border: 2px solid #FFF;
+}
+.principal-content .second-content .links .contact p {
+  @apply font-noto text-[12px] uppercase font-semibold text-white;
+}
+.principal-content .second-content .links .contact div {
+  @apply w-7 h-7 bg-white rounded-full flex justify-center items-center;
+}
+
+.principal-content .second-content .click__section {
+  @apply h-[500px] absolute top-0 left-0 right-0 bottom-16 bg-transparent rounded-2xl cursor-none;
+}
+.principal-content .second-content .click__section img {
+  @apply w-full h-full object-cover;
+}
+
+.principal-content .second-content .puntero {
+  @apply w-[70px] h-[70px] backdrop-blur-sm font-noto text-[10px] uppercase font-bold text-white rounded-full flex justify-center items-center absolute cursor-none;
+  border: 2px solid #FFF;
+}
