@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .principal-content {
-  @apply w-full h-[1200px] sm:h-[700px] flex gap-4 flex-col md:flex-row;
+  @apply w-full h-[1200px] sm:h-[750px] flex gap-4 flex-col md:flex-row mb-20;
 }
 
 .principal-content .first-content {

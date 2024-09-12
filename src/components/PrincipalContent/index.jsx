@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import hat1 from '../../assets/hat1.png'
 import hat2 from '../../assets/hat2.png'
@@ -15,52 +15,58 @@ function PrincipalContent() {
   useEffect(() => {
     const container = clickContainer.current;
     const pointerElement = pointer.current;
-  
+
     if (container && pointerElement) {
       const handleMouseMove = (e) => {
         const containerRect = container.getBoundingClientRect();
-  
+
         const x = e.clientX - containerRect.left;
         const y = e.clientY - containerRect.top;
-  
+
         pointerElement.style.left = `${x}px`;
         pointerElement.style.top = `${y}px`;
       };
-  
+
       container.addEventListener('mousemove', handleMouseMove);
-  
+
       return () => {
         container.removeEventListener('mousemove', handleMouseMove);
       };
     }
   }, []);
-  
-  const tl = gsap.timeline()
 
-  tl.fromTo(
-    '.message',
-    { x: -1400, scale: 0, opacity: 0 },
-    { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
-    '=='
-  )
-  tl.fromTo(
-    '.arrow, .learn, .contact, .puntero',
-    { x: -1400, scale: 0, opacity: 0, rotate: 180 },
-    { x: 0, scale: 1, opacity: 1, duration: 2, rotate: 0, ease: 'power1.inOut' },
-    '+'
-  )
-  tl.fromTo(
-    '.container-states',
-    { y:900, scale: 0, opacity: 0 },
-    { y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
-    '=='
-  )
-  tl.fromTo(
-    '.second-content',
-    { x: 1400, scale: 0, opacity: 0 },
-    { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
-    '=='
-  )
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline()
+
+      tl.fromTo(
+        '.message',
+        { x: -1400, scale: 0, opacity: 0 },
+        { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+        '=='
+      )
+      tl.fromTo(
+        '.arrow, .learn, .contact, .puntero',
+        { x: -1400, scale: 0, opacity: 0, rotate: 180 },
+        { x: 0, scale: 1, opacity: 1, duration: 2, rotate: 0, ease: 'power1.inOut' },
+        '+'
+      )
+      tl.fromTo(
+        '.container-states',
+        { y: 900, scale: 0, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+        '=='
+      )
+      tl.fromTo(
+        '.second-content',
+        { x: 1400, scale: 0, opacity: 0 },
+        { x: 0, scale: 1, opacity: 1, duration: 2, ease: 'power1.inOut' },
+        '=='
+      )
+    });
+
+    return () => ctx.revert();
+  });
 
   return (
     <section className="principal-content">
@@ -106,7 +112,7 @@ function PrincipalContent() {
           <a href="/discover" className='learn'>
             <p>learn more</p>
             <div>
-              <IoArrowDown size={13} color='#fff'/>
+              <IoArrowDown size={13} color='#fff' />
             </div>
           </a>
           <a href="/contact" className='contact'>

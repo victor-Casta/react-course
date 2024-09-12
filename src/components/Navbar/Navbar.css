@@ -1,5 +1,5 @@
 nav {
-  @apply w-[97%] h-14 mt-3 px-6 flex justify-between items-center fixed max-w-[1240px] rounded-lg border-solid border-2 border-[#D7D7D6];
+  @apply w-[97%] h-14 mt-3 px-6 flex justify-between items-center fixed max-w-[1240px] rounded-lg border-solid border-2 border-[#D7D7D6] z-[100] backdrop-blur-xl;
 }
 
 nav .logo h2 {

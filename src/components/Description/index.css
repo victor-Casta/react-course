@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Description {
+  @apply w-full h-auto my-20 relative flex flex-col justify-center items-center;
+}
+
+.Description p {
+  @apply text-center font-noto text-[25px] font-semibold text-black max-w-[540px];
+}
+.Description p span {
+  @apply inline-block rounded-3xl px-3 h-[42px];
+  border: 1px solid #000;
+}
+.Description p svg {
+  @apply inline;
+}
+
+.Description div:nth-child(1) {
+  @apply w-14 h-14 absolute bg-[#B2B2B2] rounded-full overflow-hidden top-[-34px] left-[40%];
+}
+.Description div img {
+  @apply w-full h-full object-contain;
+}
+.Description div:nth-child(2) {
+  @apply w-14 h-14 absolute bg-[#B2B2B2] rounded-full overflow-hidden bottom-0 right-[36%];
+}
+.Description div:nth-child(3) {
+  @apply w-14 h-14 absolute bg-[#dadad8] rounded-full overflow-hidden bottom-2 left-3 md:left-[36%];
+}
