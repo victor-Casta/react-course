@@ -1,37 +1,66 @@
 import { Card } from '../Card'
+import { useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './index.css'
 
 function TabProducts() {
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.fromTo(
+        '.TabProducts',
+        { x: 900, opacity: 0, scale: 0},
+        {
+          scale: 1,
+          opacity: 1,
+          x: 0,
+          duration: 2,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: '.TabProducts',
+            toggleActions: 'play pause resume pause'
+          }
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className="TabProducts">
       <div className="title__tab">
-        <h2>
+        <h2 className='title'>
           shop by essentials
         </h2>
         <div className="categories__tab">
           <div className="item">
             <p>all</p>
-            <span>23</span>
+            <p>23</p>
           </div>
           <div className="item">
             <p>summer coll</p>
-            <span>12</span>
+            <p>12</p>
           </div>
           <div className="item">
             <p>new ariv</p>
-            <span>10</span>
+            <p>10</p>
           </div>
           <div className="item">
             <p>best sell</p>
-            <span>4</span>
-          </div>
-          <div className="item">
-            <p>flash</p>
-            <span>23</span>
+            <p>4</p>
           </div>
         </div>
       </div>
       <div className="products-list__tab">
-        <Card price="12" title="cardigan" image="" />
+        <Card price="12" title="cardigan" image="https://images.pexels.com/photos/4287126/pexels-photo-4287126.jpeg " />
+        <Card price="12" title="cardigan" image="https://images.pexels.com/photos/4287126/pexels-photo-4287126.jpeg " />
+        <Card price="12" title="cardigan" image="https://images.pexels.com/photos/4287126/pexels-photo-4287126.jpeg " />
+        <Card price="12" title="cardigan" image="https://images.pexels.com/photos/4287126/pexels-photo-4287126.jpeg " />
+        <Card price="12" title="cardigan" image="https://images.pexels.com/photos/4287126/pexels-photo-4287126.jpeg " />
       </div>
     </section>
   )

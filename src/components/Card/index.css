@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Card {
+  @apply w-full h-[480px] overflow-hidden relative;
+}
+.Card .sup-content__Card  .notice {
+  @apply absolute z-[11] top-3 left-3 bg-white px-3 py-1 rounded-full text-red-400 font-noto text-[11px] uppercase;
+}
+.Card .sup-content__Card  img{
+  @apply w-full object-cover absolute top-0 z-[10] rounded-3xl max-h-[400px];
+}
+.Card .sup-content__Card  .actions  {
+  @apply absolute z-[12] bottom-24 right-3;
+}
+.Card .sup-content__Card  .actions button:nth-child(1) {
+  @apply w-[110px] bg-white mr-5 py-1 rounded-full border-2 border-solid border-black text-[12px] uppercase font-noto font-bold text-black;
+}
+.Card .sup-content__Card  .actions button:nth-child(2) {
+  @apply w-[90px] bg-transparent py-1 rounded-full border-2 border-solid border-white text-[12px] uppercase font-noto font-bold text-white;
+}
+
+.Card .lower-content__Card {
+  @apply absolute z-[13] bottom-3;
+}
+.Card .lower-content__Card h3 {
+  @apply text-xl font-fraunces uppercase font-black text-black;
+}
+.Card .lower-content__Card p {
+  @apply text-lg font-fraunces uppercase font-medium text-gray-400;
+}

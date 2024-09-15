@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.TabProducts {
+  @apply  flex flex-col;
+}
+.TabProducts .title__tab {
+  @apply flex flex-col lg:flex-row justify-between gap-4 lg:items-end mb-8;
+}
+.TabProducts .title__tab h2 {
+  @apply  font-fraunces  font-black text-5xl max-w-[300px] uppercase text-black;
+}
+.TabProducts .title__tab .categories__tab {
+  @apply flex gap-5 overflow-x-auto;
+}
+.TabProducts .title__tab .categories__tab .item {
+  @apply w-auto h-auto flex gap-1 border-solid border-black border-2 px-6 py-2 rounded-full cursor-pointer text-black hover:text-white hover:bg-black;
+}
+.TabProducts .title__tab .categories__tab .item p:nth-child(1) {
+  @apply font-fraunces text-[14px] font-black uppercase;
+}
+.TabProducts .title__tab .categories__tab .item p:nth-child(2)  {
+  @apply font-fraunces text-[10px] inline-block mt-[8px] ;
+}
+
+.products-list__tab {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-3 justify-center items-center;
+}
+
