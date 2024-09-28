@@ -43,7 +43,7 @@ nav .burguer-menu {
 }
 
 .mobile-menu {
-  @apply w-[97%] h-full mt-2 px-4 pt-4 bg-white z-30 rounded-lg border-solid border-2 border-[#D7D7D6] hidden absolute transition-transform;
+  @apply w-[97%] h-full mt-2 px-4 pt-4 bg-white z-[100] rounded-lg border-solid border-2 border-[#D7D7D6] hidden absolute transition-transform;
 }
 .mobile-menu li {
   @apply my-4 font-noto uppercase text-lg font-semibold;

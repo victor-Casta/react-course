@@ -1,0 +1,53 @@
+.about {
+  @apply h-[500px] grid grid-cols-1 lg:grid-cols-[1fr_2fr] grid-rows-[1fr_2fr] lg:grid-rows-1 gap-[10px] my-10;
+}
+
+.about picture {
+  @apply h-[400px] lg:h-full rounded-[20px] overflow-hidden relative;
+}
+
+.about picture img:nth-child(1) {
+  @apply w-full object-cover absolute bottom-0 z-[5];
+}
+
+.about picture .link {
+  @apply w-full absolute z-[20] flex justify-center mx-auto bottom-[-12px] no-underline;
+}
+
+.about picture .link a {
+  @apply w-56 px-[20px] py-[5px] bg-[#DADAD8] flex justify-center items-center gap-[10px] mx-auto no-underline;
+  border-radius: 30px 30px 10px 10px;
+  border: 11px solid #FFF;
+}
+
+.about picture .link a p {
+  @apply font-noto text-sm no-underline font-semibold uppercase;
+}
+
+.about .about-content {
+  @apply h-fit lg:h-full rounded-[20px] overflow-hidden bg-[#768f57] flex flex-col justify-between p-8;
+}
+
+.about .about-content h2 {
+  @apply font-fraunces text-3xl lg:text-[3rem] font-black uppercase text-black lg:max-w-[70%] leading-[1.1];
+}
+
+.about .about-content .content {
+  @apply w-full flex flex-col mt-12 lg:mt-0 lg:flex-row justify-between p-6 gap-6 border border-solid border-black rounded-2xl;
+}
+
+.about .about-content .content p {
+  @apply font-noto text-sm text-black font-semibold;
+}
+
+.about .about-content .content div .title__content {
+  @apply flex gap-4 mb-2 items-center;
+}
+
+.about .about-content .content div .title__content span {
+  @apply w-[30px] h-[30px] rounded-full bg-black flex justify-center items-center;
+}
+
+.about .about-content .content div .title__content h3 {
+  @apply font-fraunces text-base uppercase text-black font-bold;
+}
