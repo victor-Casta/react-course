@@ -1,0 +1,29 @@
+.video {
+  @apply flex flex-col gap-3;
+}
+
+.video h2 {
+  @apply font-fraunces text-[3rem] font-black uppercase text-black mx-auto text-center leading-[1.0] my-6;
+}
+
+.video .video_container {
+  @apply w-full h-fit relative;
+}
+
+.video .video_container .link_container {
+  @apply absolute bottom-[-12px] w-full flex justify-center;
+}
+
+.video .video_container .link_container a {
+  @apply w-56 px-[20px] py-[5px] bg-[#DADAD8] flex flex-row-reverse justify-center items-center gap-[10px] mx-auto no-underline cursor-pointer;
+  border-radius: 30px 30px 10px 10px;
+  border: 11px solid #FFF;
+}
+
+.video .video_container .link_container a p {
+  @apply font-noto text-sm no-underline font-semibold uppercase;
+}
+
+.video .video_container video {
+  @apply rounded-2xl;
+}
