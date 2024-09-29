@@ -5,6 +5,7 @@ import { Description } from "../../components/Description"
 import { TabProducts } from "../../components/TabProducts"
 import { About } from "../../components/About"
 import { Video } from "../../components/Video"
+import { Footer } from "../../components/Footer"
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
         <About />
         <Video />
       </Layout>
+      <Footer />
     </>
   )
 }

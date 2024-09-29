@@ -1,9 +1,9 @@
 .video {
-  @apply flex flex-col gap-3;
+  @apply flex flex-col gap-3 mb-[39rem] lg:mb-[350px];
 }
 
 .video h2 {
-  @apply font-fraunces text-[3rem] font-black uppercase text-black mx-auto text-center leading-[1.0] my-6;
+  @apply font-fraunces pt-[430px] md:pt-[300px] lg:pt-0 text-[1.875rem] lg:text-[3rem] font-black uppercase text-black mx-auto text-center leading-[1.0] mt-16;
 }
 
 .video .video_container {

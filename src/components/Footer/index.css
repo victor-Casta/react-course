@@ -1,0 +1,43 @@
+footer {
+  @apply w-full h-max bg-black absolute bottom-0 py-16;
+}
+
+footer .footer__container {
+  @apply flex flex-col lg:flex-row justify-between items-start gap-[20px] px-[20px] max-w-[1240px] mx-auto;
+}
+
+footer .footer__container .logo h2 {
+  @apply font-fraunces font-semibold text-[3rem] uppercase leading-none text-white mb-2;
+}
+
+footer .footer__container .logo p {
+  @apply font-noto font-semibold text-sm uppercase leading-none text-white;
+}
+
+footer .footer__container .links {
+  @apply flex gap-12 my-6 lg:my-0 lg:gap-20;
+}
+
+footer .footer__container .links div h3 {
+  @apply font-noto font-semibold text-base uppercase leading-none text-white mb-4;
+}
+
+footer .footer__container .links div ul li a {
+  @apply font-noto font-thin text-sm capitalize leading-none text-gray-300 no-underline;
+}
+
+footer .footer__container .community h3 {
+  @apply font-noto font-semibold text-base uppercase leading-none text-white mb-4;
+}
+
+footer .footer__container .community .send-email {
+  @apply w-60 h-9 relative bg-black border border-solid border-white rounded-full;
+}
+
+footer .footer__container .community .send-email input {
+  @apply w-[85%] h-full px-4 py-2 rounded-full focus:outline-none bg-black text-gray-500 text-sm;
+}
+
+footer .footer__container .community .send-email button {
+  @apply w-7 h-7 bg-white absolute flex justify-center items-center top-[2.5px] right-[3px] rounded-full
+}
