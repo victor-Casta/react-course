@@ -1,9 +1,53 @@
+import { useLayoutEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './index.css'
 import arrowIcon from '../../assets/arrow.svg'
 import planetIcon from '../../assets/planet.svg'
 import golfIcon from '../../assets/golf.svg'
 
 function About() {
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.fromTo(
+        '.about',
+        { x: -1400, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: '.about',
+            start: 'top center',
+            toggleActions: 'play pause resume pause'
+          }
+        }
+      );
+
+      gsap.fromTo(
+        '.about-content',
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2,
+          ease: 'power2.inOut',
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top center',
+            toggleActions: 'play pause resume pause'
+          }
+        }
+      );
+    })
+    return () => ctx.revert();
+  })
+
   return (
     <section className='about'>
       <picture>
