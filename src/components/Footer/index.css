@@ -1,5 +1,5 @@
 footer {
-  @apply w-full h-max bg-black absolute bottom-0 py-16;
+  @apply w-full h-max bg-black absolute left-0 bottom-0 py-16;
 }
 
 footer .footer__container {

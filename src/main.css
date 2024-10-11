@@ -6,6 +6,6 @@ body {
   @apply m-0 p-0 w-full h-screen min-w-[290px];
 }
 
-#root {
+#root, shoppingcontextprovider {
   @apply w-full flex justify-center relative;
 }
