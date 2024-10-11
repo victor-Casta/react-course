@@ -86,9 +86,9 @@ function TabProducts() {
       <div className="products-list__tab">
         {
           tabValue === null || tabValue === 'all' ? products?.map((item) => {
-            return <Card price={item.price} title={item.name} key={item.id} image={item.image} />
+            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} />
           }) : products?.filter(product => product.category === tabValue)?.map((item) => {
-            return <Card price={item.price} title={item.name} key={item.id} image={item.image} />
+            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} />
           })
         }
       </div>
