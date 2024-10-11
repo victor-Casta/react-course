@@ -1,20 +1,22 @@
-import { useRef } from "react";
-import { NavLink } from "react-router-dom";
-import { RiSearchLine } from "react-icons/ri";
-import { CiHeart } from "react-icons/ci";
-import { IoCartOutline } from "react-icons/io5";
-import { CgMenuRightAlt } from "react-icons/cg";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { useRef, useContext } from "react"
+import { NavLink } from "react-router-dom"
+import { RiSearchLine } from "react-icons/ri"
+import { CiHeart } from "react-icons/ci"
+import { IoCartOutline } from "react-icons/io5"
+import { CgMenuRightAlt } from "react-icons/cg"
+import { IoIosArrowForward } from "react-icons/io"
+import { IoCloseCircleOutline } from "react-icons/io5"
+import { ShoppingContext } from '../../context'
 import './Navbar.css';
 
 function Navbar() {
   const mobileMenu = useRef(null);
+  const context = useContext(ShoppingContext)
 
   const toggleMenu = () => {
     if (mobileMenu.current) {
-      mobileMenu.current.classList.toggle('block');
-      mobileMenu.current.classList.toggle('hidden');
+      mobileMenu.current.classList.toggle('block')
+      mobileMenu.current.classList.toggle('hidden')
     } else {
       console.error('ref in menu is null');
     }
@@ -22,10 +24,10 @@ function Navbar() {
 
   const closeMenu = () => {
     if (mobileMenu.current) {
-      mobileMenu.current.classList.add('hidden');
-      mobileMenu.current.classList.remove('block');
+      mobileMenu.current.classList.add('hidden')
+      mobileMenu.current.classList.remove('block')
     } else {
-      console.error('ref in menu is null');
+      console.error('ref in menu is null')
     }
   };
 
@@ -94,7 +96,7 @@ function Navbar() {
           <CiHeart size={23} className="heart-icon" />
           <div className="shopping-car">
             <IoCartOutline size={23} className="car-icon" />
-            <span>2</span>
+            <span>{context.count}</span>
           </div>
           <CgMenuRightAlt className="burguer-menu" size={23} onClick={toggleMenu} />
         </section>
