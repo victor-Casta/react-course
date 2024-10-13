@@ -16,7 +16,7 @@ function Card(props) {
           onClick={() => context.setCount(context.count + 1)}
           >
             add to cart</button>
-          <button>buy now</button>
+          <button onClick={() => context.openProductPreview()}>Preview</button>
         </div>
       </section>
       <section className="lower-content__Card">

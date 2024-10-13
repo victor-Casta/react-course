@@ -5,11 +5,18 @@ export const ShoppingContext = createContext()
 function ShoppingContextProvider({children}) {
 
   const [ count, setCount ] = useState(0)
+  const [ isProductPreviewOpen, setIsProductPreviewOpen ] = useState(false)
+
+  const openProductPreview = () => setIsProductPreviewOpen(true)
+  const closeProductPreview = () => setIsProductPreviewOpen(false)
 
   return (
     <ShoppingContext.Provider value={{
       count,
-      setCount
+      setCount,
+      isProductPreviewOpen,
+      openProductPreview,
+      closeProductPreview
     }}>
       {children}
     </ShoppingContext.Provider>

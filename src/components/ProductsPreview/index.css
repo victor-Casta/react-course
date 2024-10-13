@@ -1,0 +1,15 @@
+.preview-products {
+  @apply fixed w-screen backdrop-blur-sm h-screen right-0 bottom-0 z-[100] justify-end;
+}
+
+.preview-products .content-container {
+  @apply w-[30%] h-screen bg-black p-8 relative;
+}
+
+.preview-products .content-container picture img {
+  @apply object-cover w-full h-[400px];
+}
+
+.preview-products .close-icon {
+  @apply w-8 h-8 text-white absolute top-4 right-4 cursor-pointer
+}
