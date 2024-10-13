@@ -10,13 +10,19 @@ function ShoppingContextProvider({children}) {
   const openProductPreview = () => setIsProductPreviewOpen(true)
   const closeProductPreview = () => setIsProductPreviewOpen(false)
 
+  const [ productPreviewData, setProductPreviewData ] = useState({})
+
+  console.log(productPreviewData)
+
   return (
     <ShoppingContext.Provider value={{
       count,
       setCount,
       isProductPreviewOpen,
       openProductPreview,
-      closeProductPreview
+      closeProductPreview,
+      productPreviewData,
+      setProductPreviewData,
     }}>
       {children}
     </ShoppingContext.Provider>
