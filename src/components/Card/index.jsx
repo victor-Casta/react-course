@@ -11,6 +11,11 @@ function Card(props) {
     context.setProductPreviewData(product)
   }
 
+  const addProductToCart = (productDetail) => {
+    context.setCount(context.count + 1)
+    context.setProductsToCart([...context.productsToCart, productDetail])
+  }
+
   return(
     <article className="Card" >
       <section className="sup-content__Card">
@@ -18,7 +23,7 @@ function Card(props) {
         <img src={props.image} alt="image" />
         <div className="actions">
           <button
-          onClick={() => context.setCount(context.count + 1)}
+          onClick={() => addProductToCart(props) }
           >
             add to cart</button>
           <button onClick={() => showProductPreview(props)}>Preview</button>

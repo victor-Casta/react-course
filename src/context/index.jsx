@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState } from "react"
 
 export const ShoppingContext = createContext()
@@ -11,8 +12,8 @@ function ShoppingContextProvider({children}) {
   const closeProductPreview = () => setIsProductPreviewOpen(false)
 
   const [ productPreviewData, setProductPreviewData ] = useState({})
+  const [ productsToCart, setProductsToCart ] = useState([])
 
-  console.log(productPreviewData)
 
   return (
     <ShoppingContext.Provider value={{
@@ -22,7 +23,9 @@ function ShoppingContextProvider({children}) {
       openProductPreview,
       closeProductPreview,
       productPreviewData,
-      setProductPreviewData
+      setProductPreviewData,
+      productsToCart,
+      setProductsToCart,
     }}>
       {children}
     </ShoppingContext.Provider>
