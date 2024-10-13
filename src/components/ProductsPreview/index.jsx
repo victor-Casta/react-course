@@ -19,6 +19,7 @@ function ProductsPreview() {
         <div className="product-details">
           <h2>{context.productPreviewData.title}</h2>
           <p>Price: ${context.productPreviewData.price}</p>
+          <p>{context.productPreviewData.description}</p>
           <button onClick={() => context.setCount(context.count + 1)}>Add to cart</button>
         </div>
       </section>

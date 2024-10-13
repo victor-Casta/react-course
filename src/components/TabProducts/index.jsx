@@ -6,7 +6,6 @@ import './index.css'
 const BASE_URL_API = import.meta.env.VITE_BASE_API_URL
 
 function TabProducts() {
-
   const [products, setProducs] = useState(null)
   const [categories, setCategories] = useState(null)
   const [tabValue, setTabValue] = useState(null)
@@ -56,7 +55,6 @@ function TabProducts() {
         }
       );
     });
-
     return () => ctx.revert();
   }, []);
 
@@ -86,9 +84,9 @@ function TabProducts() {
       <div className="products-list__tab">
         {
           tabValue === null || tabValue === 'all' ? products?.map((item) => {
-            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} />
+            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} description={item.description} />
           }) : products?.filter(product => product.category === tabValue)?.map((item) => {
-            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} />
+            return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} description={item.description} />
           })
         }
       </div>

@@ -22,7 +22,7 @@ function ShoppingContextProvider({children}) {
       openProductPreview,
       closeProductPreview,
       productPreviewData,
-      setProductPreviewData,
+      setProductPreviewData
     }}>
       {children}
     </ShoppingContext.Provider>
