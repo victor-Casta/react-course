@@ -94,7 +94,7 @@ function Navbar() {
             <input type="text" placeholder="Search" />
           </div>
           <CiHeart size={23} className="heart-icon" />
-          <div className="shopping-car">
+          <div className="shopping-car" onClick={() => context.openCartProducts()}>
             <IoCartOutline size={23} className="car-icon" />
             <span>{context.count}</span>
           </div>

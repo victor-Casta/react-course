@@ -7,6 +7,12 @@ function ProductsPreview() {
 
   const context = useContext(ShoppingContext)
 
+  const addProductToCart = () => {
+    context.setCount(context.count + 1)
+    context.closeProductPreview()
+    context.openCartProducts()
+  }
+
   return (
     <aside className={`preview-products ${context.isProductPreviewOpen ? 'flex' : 'hidden'}`}>
       <section className="content-container">
@@ -20,7 +26,7 @@ function ProductsPreview() {
           <h2>{context.productPreviewData.title}</h2>
           <p>Price: ${context.productPreviewData.price}</p>
           <p>{context.productPreviewData.description}</p>
-          <button onClick={() => context.setCount(context.count + 1)}>Add to cart</button>
+          <button onClick={() => addProductToCart()}>Add to cart</button>
         </div>
       </section>
     </aside>

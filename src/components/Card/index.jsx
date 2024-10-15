@@ -14,6 +14,7 @@ function Card(props) {
   const addProductToCart = (productDetail) => {
     context.setCount(context.count + 1)
     context.setProductsToCart([...context.productsToCart, productDetail])
+    context.openCartProducts()
   }
 
   return(

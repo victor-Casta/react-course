@@ -6,14 +6,17 @@ export const ShoppingContext = createContext()
 function ShoppingContextProvider({children}) {
 
   const [ count, setCount ] = useState(0)
-  const [ isProductPreviewOpen, setIsProductPreviewOpen ] = useState(false)
 
+  const [ isProductPreviewOpen, setIsProductPreviewOpen ] = useState(false)
   const openProductPreview = () => setIsProductPreviewOpen(true)
   const closeProductPreview = () => setIsProductPreviewOpen(false)
 
+  const [ isCartProductsOpen, setIsCartProductsOpen ] = useState(false)
+  const openCartProducts = () => setIsCartProductsOpen(true)
+  const closeCartProducts = () => setIsCartProductsOpen(false)
+
   const [ productPreviewData, setProductPreviewData ] = useState({})
   const [ productsToCart, setProductsToCart ] = useState([])
-
 
   return (
     <ShoppingContext.Provider value={{
@@ -26,6 +29,9 @@ function ShoppingContextProvider({children}) {
       setProductPreviewData,
       productsToCart,
       setProductsToCart,
+      isCartProductsOpen,
+      openCartProducts,
+      closeCartProducts,
     }}>
       {children}
     </ShoppingContext.Provider>
