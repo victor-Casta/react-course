@@ -1,14 +1,15 @@
 import { useContext } from "react"
 import { ShoppingContext } from "../../context"
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from "react-icons/io"
 import './index.css'
 
 function ProductsPreview() {
 
   const context = useContext(ShoppingContext)
 
-  const addProductToCart = () => {
+  const addProductToCart = (productDetails) => {
     context.setCount(context.count + 1)
+    context.setProductsToCart([...context.productsToCart, productDetails])
     context.closeProductPreview()
     context.openCartProducts()
   }
@@ -26,7 +27,7 @@ function ProductsPreview() {
           <h2>{context.productPreviewData.title}</h2>
           <p>Price: ${context.productPreviewData.price}</p>
           <p>{context.productPreviewData.description}</p>
-          <button onClick={() => addProductToCart()}>Add to cart</button>
+          <button onClick={() => addProductToCart(context.productPreviewData)}>Add to cart</button>
         </div>
       </section>
     </aside>

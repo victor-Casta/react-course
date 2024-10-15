@@ -7,5 +7,9 @@
 }
 
 .preview-products .close-icon {
-  @apply w-8 h-8 text-white absolute top-4 right-4 cursor-pointer
+  @apply w-8 h-8 text-white absolute top-4 right-7 cursor-pointer
+}
+
+.preview-products .content-container .products-list {
+  @apply w-full h-full overflow-y-auto flex flex-col gap-4 py-4;
 }

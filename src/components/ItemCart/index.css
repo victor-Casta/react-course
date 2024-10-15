@@ -1,0 +1,35 @@
+.Item-Cart {
+  @apply w-full p-2 flex justify-between;
+}
+
+.Item-Cart img {
+  @apply w-[80px] h-full mr-4 object-cover rounded-lg;
+}
+
+.Item-Cart .details {
+  @apply flex-grow;
+}
+
+.Item-Cart .details h2 {
+  @apply mb-1 font-noto text-lg font-semibold text-gray-200;
+}
+
+.Item-Cart .details p {
+  @apply font-noto text-sm font-semibold text-gray-300;
+}
+
+.Item-Cart .details .quantity {
+  @apply w-fit mt-3 flex gap-4 border border-white items-center;
+}
+
+.Item-Cart .details .quantity button {
+  @apply w-8 h-8 text-gray-300 font-noto font-semibold text-xl border border-white;
+}
+
+.Item-Cart .details .quantity span {
+  @apply font-noto text-base font-semibold text-gray-300;
+}
+
+.Item-Cart .remove {
+  @apply text-xl text-red-500 cursor-pointer
+}
