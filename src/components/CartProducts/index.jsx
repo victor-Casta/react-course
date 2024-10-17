@@ -8,6 +8,12 @@ function CartProducts() {
 
   const context = useContext(ShoppingContext)
 
+  const handleRemoveProduct = (id) => {
+    const filteredProducts = context.productsToCart.filter((product) => product.id !== id)
+    context.setProductsToCart(filteredProducts)
+  }
+
+
   return (
     <aside className={`preview-products ${context.isCartProductsOpen ? 'flex' : 'hidden'}`}>
       <section className="content-container">
@@ -18,10 +24,12 @@ function CartProducts() {
           {
             context.productsToCart.map((product) => (
               <ItemCart
+                id={product.id}
                 key={product.id}
                 imageUrl={product.image}
                 title={product.title}
                 price={product.price}
+                handleRemoveProduct={handleRemoveProduct}
               />
             ))
           }

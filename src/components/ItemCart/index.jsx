@@ -3,7 +3,7 @@ import './index.css'
 import { CgClose } from "react-icons/cg";
 
 function ItemCart(props) {
-  const { imageUrl, title, price } = props
+  const { id, imageUrl, title, price, handleRemoveProduct } = props
 
   return (
     <article className='Item-Cart'>
@@ -20,7 +20,7 @@ function ItemCart(props) {
         </div>
       </div>
       <div className="remove">
-        <CgClose />
+        <CgClose onClick={() => handleRemoveProduct(id)}/>
       </div>
     </article>
   )
