@@ -15,18 +15,36 @@ function Card(props) {
     context.setCount(context.count + 1)
     context.setProductsToCart([...context.productsToCart, productDetail])
     context.openCartProducts()
+    addedProductsToCart(productDetail.id)
   }
 
-  return(
+  const addedProductsToCart = (id) => {
+    let isProductInCart = context.productsToCart.filter((product) => product.id == id).length > 0
+    if (!isProductInCart) {
+      return (
+        <button
+          onClick={() => addProductToCart(props)}
+        >
+          add to cart</button>
+      )
+    } else {
+      return (
+        <button className='!bg-custom-green'>
+          added
+        </button>
+      )
+    }
+  }
+
+  return (
     <article className="Card" >
       <section className="sup-content__Card">
         <div className="notice">{props.category}</div>
         <img src={props.image} alt="image" />
         <div className="actions">
-          <button
-          onClick={() => addProductToCart(props) }
-          >
-            add to cart</button>
+          {
+            addedProductsToCart(props.id)
+          }
           <button onClick={() => showProductPreview(props)}>Preview</button>
         </div>
       </section>

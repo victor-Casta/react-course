@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         'fraunces': ['"Fraunces", serif'],
         'noto': [' "Noto Sans", sans-serif']
+      },
+      colors: {
+        'custom-green': '#6D8453'
       }
     },
   },
