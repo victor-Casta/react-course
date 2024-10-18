@@ -14,6 +14,21 @@ function ProductsPreview() {
     context.openCartProducts()
   }
 
+  const addedProductsToCart = (id) => {
+    let isProductInCart = context.productsToCart.filter((product) => product.id == id).length > 0
+    if (!isProductInCart) {
+      return (
+        <button onClick={() => addProductToCart(context.productPreviewData)}>Add to cart</button>
+      )
+    } else {
+      return (
+        <button className='!bg-custom-green'>
+          added
+        </button>
+      )
+    }
+  }
+
   return (
     <aside className={`preview-products ${context.isProductPreviewOpen ? 'flex' : 'hidden'}`}>
       <section className="content-container">
@@ -27,7 +42,9 @@ function ProductsPreview() {
           <h2>{context.productPreviewData.title}</h2>
           <p>Price: ${context.productPreviewData.price}</p>
           <p>{context.productPreviewData.description}</p>
-          <button onClick={() => addProductToCart(context.productPreviewData)}>Add to cart</button>
+          {
+            addedProductsToCart(context.productPreviewData.id)
+          }
         </div>
       </section>
     </aside>
