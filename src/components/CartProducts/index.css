@@ -13,3 +13,6 @@
 .preview-products .content-container .products-list {
   @apply w-full h-full overflow-y-auto flex flex-col gap-4 py-4;
 }
+.total-price p {
+  @apply text-white font-fraunces text-base uppercase font-normal;
+}

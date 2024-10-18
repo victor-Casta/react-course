@@ -1,8 +1,9 @@
 import { useContext } from "react"
 import { ShoppingContext } from "../../context"
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import './index.css'
 import { ItemCart } from "../ItemCart";
+import totalPrice from "../../utils/total_price";
+import './index.css'
 
 function CartProducts() {
 
@@ -12,7 +13,6 @@ function CartProducts() {
     const filteredProducts = context.productsToCart.filter((product) => product.id !== id)
     context.setProductsToCart(filteredProducts)
   }
-
 
   return (
     <aside className={`preview-products ${context.isCartProductsOpen ? 'flex' : 'hidden'}`}>
@@ -33,6 +33,9 @@ function CartProducts() {
               />
             ))
           }
+        </div>
+        <div className="total-price">
+          <p>Total Price: ${totalPrice(context.productsToCart)}</p>
         </div>
       </section>
     </aside>
