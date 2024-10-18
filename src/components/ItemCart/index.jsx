@@ -1,9 +1,40 @@
 /* eslint-disable react/prop-types */
+import { useContext, useState, useRef, useEffect } from 'react'
+import { ShoppingContext } from '../../context'
+import { CgClose } from "react-icons/cg"
 import './index.css'
-import { CgClose } from "react-icons/cg";
 
 function ItemCart(props) {
+  const context = useContext(ShoppingContext)
+  const restButton = useRef()
   const { id, imageUrl, title, price, handleRemoveProduct } = props
+  const [cuantityProducts, setCuantityProducts] = useState(1)
+
+  useEffect(() => {
+    validateQuantity(cuantityProducts)
+    changePriceToQuantity(id)
+  }, [cuantityProducts])
+
+  const changePriceToQuantity = (id) => {
+    const newProductDetail = context.productsToCart.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          price: item.pricePerUnit * cuantityProducts
+        }
+      }
+      return item
+    })
+    context.setProductsToCart(newProductDetail)
+  }
+
+  const validateQuantity = (quantity) => {
+    if (quantity <= 1) {
+      restButton.current.disabled = true
+    } else {
+      restButton.current.disabled = false
+    }
+  }
 
   return (
     <article className='Item-Cart'>
@@ -12,15 +43,20 @@ function ItemCart(props) {
       </div>
       <div className="details">
         <h2>{title}</h2>
-        <p>{price}</p>
+        <p>{price.toFixed(2)}</p>
         <div className="quantity">
-          <button>-</button>
-          <span className="quantity-value">1</span>
-          <button>+</button>
+          <button
+            onClick={() => setCuantityProducts(cuantityProducts - 1)}
+            ref={restButton}
+          >-</button>
+          <span className="quantity-value">{cuantityProducts}</span>
+          <button
+            onClick={() => setCuantityProducts(cuantityProducts + 1)}
+          >+</button>
         </div>
       </div>
       <div className="remove">
-        <CgClose onClick={() => handleRemoveProduct(id)}/>
+        <CgClose onClick={() => handleRemoveProduct(id)} />
       </div>
     </article>
   )
