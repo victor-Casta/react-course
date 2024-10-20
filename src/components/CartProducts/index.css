@@ -11,8 +11,17 @@
 }
 
 .preview-products .content-container .products-list {
-  @apply w-full h-full overflow-y-auto flex flex-col gap-4 py-4;
+  @apply w-full h-full overflow-y-auto flex flex-col gap-4 pt-4 pb-28;
 }
-.total-price p {
-  @apply text-white font-fraunces text-base uppercase font-normal;
+
+.buy-product {
+  @apply w-[85%] flex flex-col justify-between absolute bottom-6 right-9 border-t-2 border-t-white pt-4 bg-black;
+}
+
+.buy-product .total {
+  @apply w-full flex justify-between mb-4 text-white font-semibold text-lg;
+}
+
+.buy-product button {
+  @apply w-full h-10 text-black font-semibold text-lg bg-white rounded-sm;
 }

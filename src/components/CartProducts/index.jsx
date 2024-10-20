@@ -14,6 +14,17 @@ function CartProducts() {
     context.setProductsToCart(filteredProducts)
   }
 
+  const handleCheckout = () => {
+    let orderToAdd = {
+      date: new Date(Date.now()),
+      products: context.productsToCart,
+      totalPrice: totalPrice(context.productsToCart),
+      totalProducts: context.productsToCart.length
+    }
+    context.setOrder([...context.order, orderToAdd])
+    context.setProductsToCart([])
+  }
+
   return (
     <aside className={`preview-products ${context.isCartProductsOpen ? 'flex' : 'hidden'}`}>
       <section className="content-container">
@@ -34,8 +45,12 @@ function CartProducts() {
             ))
           }
         </div>
-        <div className="total-price">
-          <p>Total Price: ${totalPrice(context.productsToCart)}</p>
+        <div className="buy-product">
+          <div className="total">
+            <p>Total:</p>
+            <p>${totalPrice(context.productsToCart)}</p>
+          </div>
+          <button onClick={() => handleCheckout()}>Checkout</button>
         </div>
       </section>
     </aside>

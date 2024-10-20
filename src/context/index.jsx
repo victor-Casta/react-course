@@ -18,6 +18,8 @@ function ShoppingContextProvider({children}) {
   const [ productPreviewData, setProductPreviewData ] = useState({})
   const [ productsToCart, setProductsToCart ] = useState([])
 
+  const [ order, setOrder ] = useState([])
+
   return (
     <ShoppingContext.Provider value={{
       count,
@@ -32,6 +34,8 @@ function ShoppingContextProvider({children}) {
       isCartProductsOpen,
       openCartProducts,
       closeCartProducts,
+      order,
+      setOrder
     }}>
       {children}
     </ShoppingContext.Provider>
