@@ -3,11 +3,11 @@
 }
 
 .preview-products .content-container {
-  @apply w-[30%] h-screen bg-black px-8 py-14 relative;
+  @apply !w-screen lg:!w-[30%] h-screen bg-rose-500 px-8 py-14 relative overflow-y-scroll;
 }
 
 .preview-products .content-container picture img {
-  @apply object-cover w-full h-fit mb-4 max-h-[550px];
+  @apply object-cover w-full h-fit mb-4 max-h-[73vh] lg:max-h-[550px];
 }
 
 .preview-products .close-icon {
