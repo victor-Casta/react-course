@@ -96,7 +96,7 @@ function Navbar() {
           <CiHeart size={23} className="heart-icon" />
           <div className="shopping-car" onClick={() => context.openCartProducts()}>
             <IoCartOutline size={23} className="car-icon" />
-            <span>{context.count}</span>
+            <span>{context.productsToCart.length}</span>
           </div>
           <CgMenuRightAlt className="burguer-menu" size={23} onClick={toggleMenu} />
         </section>
