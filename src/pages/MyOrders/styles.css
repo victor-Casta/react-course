@@ -1,0 +1,23 @@
+.orderList {
+  @apply flex flex-col gap-5;
+}
+
+.orderList .order-item {
+  @apply w-fit h-fit flex justify-between items-center gap-7 mx-auto;
+}
+
+.orderList .order-item img {
+  @apply w-32 h-fit object-cover rounded-lg flex justify-center;
+}
+
+.orderList .order-item .order-content h2 {
+  @apply font-fraunces text-xl uppercase font-black;
+}
+
+.orderList .order-item .order-content p.price {
+  @apply mb-4;
+}
+
+.orderList .order-item .order-content p {
+  @apply max-w-[300px] font-noto text-base font-thin text-black;
+}

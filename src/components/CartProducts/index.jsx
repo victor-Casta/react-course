@@ -1,8 +1,9 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import { ShoppingContext } from "../../context"
-import { IoIosCloseCircleOutline } from "react-icons/io";
-import { ItemCart } from "../ItemCart";
-import totalPrice from "../../utils/total_price";
+import { IoIosCloseCircleOutline } from "react-icons/io"
+import { ItemCart } from "../ItemCart"
+import totalPrice from "../../utils/total_price"
 import './index.css'
 
 function CartProducts() {
@@ -50,7 +51,9 @@ function CartProducts() {
             <p>Total:</p>
             <p>${totalPrice(context.productsToCart)}</p>
           </div>
-          <button onClick={() => handleCheckout()}>Checkout</button>
+          <Link to={'/my-orders/last'}>
+            <button onClick={() => handleCheckout()}>Checkout</button>
+          </Link>
         </div>
       </section>
     </aside>
