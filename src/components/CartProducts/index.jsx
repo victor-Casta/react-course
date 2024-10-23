@@ -52,7 +52,10 @@ function CartProducts() {
             <p>${totalPrice(context.productsToCart)}</p>
           </div>
           <Link to={'/my-orders/last'}>
-            <button onClick={() => handleCheckout()}>Checkout</button>
+            <button onClick={() => {
+              handleCheckout()
+              context.closeCartProducts()
+            }}>Checkout</button>
           </Link>
         </div>
       </section>
