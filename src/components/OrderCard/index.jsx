@@ -13,8 +13,9 @@ function OrderCard() {
         </picture>
         <div className="order-content">
           <h2>{item.title}</h2>
-          <p className='price'>Price: ${item.price}</p>
-          <p>{item.description}</p>
+          <p><b>Quantity: </b>{item.quantity}</p>
+          <p><b>Precio por unidad: </b>{item.pricePerUnit}</p>
+          <p><b>Total Price:</b> ${item.price}</p>
         </div>
       </article>
     ))

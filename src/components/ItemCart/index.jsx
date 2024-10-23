@@ -20,7 +20,8 @@ function ItemCart(props) {
       if (item.id === id) {
         return {
           ...item,
-          price: item.pricePerUnit * cuantityProducts
+          price: item.pricePerUnit * cuantityProducts,
+          quantity: cuantityProducts
         }
       }
       return item
