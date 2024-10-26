@@ -20,6 +20,8 @@ function ShoppingContextProvider({children}) {
 
   const [ order, setOrder ] = useState([])
 
+  console.log(order)
+
   return (
     <ShoppingContext.Provider value={{
       count,
