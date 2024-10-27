@@ -17,7 +17,7 @@ function CartProducts() {
 
   const handleCheckout = () => {
     let orderToAdd = {
-      date: new Date(Date.now()),
+      date: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
       products: context.productsToCart,
       totalPrice: totalPrice(context.productsToCart),
       totalProducts: context.productsToCart.length
@@ -51,7 +51,7 @@ function CartProducts() {
             <p>Total:</p>
             <p>${totalPrice(context.productsToCart)}</p>
           </div>
-          <Link to={'/my-orders/last'}>
+          <Link to={'/my-orders/product/last'}>
             <button onClick={() => {
               handleCheckout()
               context.closeCartProducts()
