@@ -1,5 +1,5 @@
 .orders-item {
-  @apply w-fit min-w-[300px] px-6 py-4 mx-auto rounded-lg shadow-sm shadow-gray-500/50 flex gap-5 flex-col items-center mb-4;
+  @apply px-6 py-4 mx-auto rounded-lg shadow-lg shadow-gray-500/85 flex gap-5 flex-col items-center mb-4;
 }
 
 .orders-item .orders__header {
