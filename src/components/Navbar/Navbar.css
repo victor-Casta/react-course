@@ -23,7 +23,7 @@ nav .actions .search {
   @apply relative hidden md:inline-block;
 }
 nav .actions .search input {
-  @apply w-36 h-8 pl-8 bg-[#F5F5F4] rounded-xl;
+  @apply w-36 h-8 pl-8 bg-[#F5F5F4] rounded-xl focus:outline-none;
 }
 nav .actions .search .search-icon {
   @apply absolute z-20 top-2 left-2 stroke-1 cursor-pointer;

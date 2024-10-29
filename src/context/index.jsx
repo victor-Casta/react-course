@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
+const BASE_URL_API = import.meta.env.VITE_BASE_API_URL
 
 export const ShoppingContext = createContext()
 
@@ -20,6 +21,28 @@ function ShoppingContextProvider({children}) {
 
   const [ order, setOrder ] = useState([])
 
+  const [ products, setProducs ] = useState(null)
+  const [ categories, setCategories ] = useState(null)
+
+  const [ searchProduct, setSearchProduct ] = useState('')
+
+  useEffect(() => {
+    try {
+      fetch(`${BASE_URL_API}/products`)
+        .then(response => response.json())
+        .then(data => setProducs(data))
+    } catch (error) {
+      console.error(error)
+    }
+    try {
+      fetch(`${BASE_URL_API}/categories`)
+        .then(response => response.json())
+        .then(data => setCategories(data))
+    } catch (error) {
+      console.error(error)
+    }
+  }, [])
+
   return (
     <ShoppingContext.Provider value={{
       count,
@@ -35,7 +58,11 @@ function ShoppingContextProvider({children}) {
       openCartProducts,
       closeCartProducts,
       order,
-      setOrder
+      setOrder,
+      products,
+      categories,
+      searchProduct,
+      setSearchProduct
     }}>
       {children}
     </ShoppingContext.Provider>

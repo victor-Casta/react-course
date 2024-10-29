@@ -1,35 +1,17 @@
-import { Card } from '../Card'
-import { useLayoutEffect, useState, useEffect } from 'react'
+import { useLayoutEffect, useState, useContext } from 'react'
+import { ShoppingContext } from '../../context'
 import gsap from 'gsap';
+import { Card } from '../Card'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './index.css'
-const BASE_URL_API = import.meta.env.VITE_BASE_API_URL
 
 function TabProducts() {
-  const [products, setProducs] = useState(null)
-  const [categories, setCategories] = useState(null)
   const [tabValue, setTabValue] = useState(null)
-
-  useEffect(() => {
-    try {
-      fetch(`${BASE_URL_API}/products`)
-        .then(response => response.json())
-        .then(data => setProducs(data))
-    } catch (error) {
-      console.error(error)
-    }
-    try {
-      fetch(`${BASE_URL_API}/categories`)
-        .then(response => response.json())
-        .then(data => setCategories(data))
-    } catch (error) {
-      console.error(error)
-    }
-  }, [])
+  const context = useContext(ShoppingContext)
 
   const totalProducts  = () => {
     let allProducts = 0
-    categories?.map((item) => {
+    context.categories?.map((item) => {
       allProducts += item.products.length
     })
     return allProducts
@@ -70,7 +52,7 @@ function TabProducts() {
             <p>{totalProducts() > 0 ? totalProducts() : 0}</p>
           </div>
           {
-            categories?.map((item) => {
+            context.categories?.map((item) => {
               return (
                 <div className="item" key={item.id} >
                   <p onClick={(event) => setTabValue(event.target.textContent)}>{item.name}</p>
@@ -83,9 +65,9 @@ function TabProducts() {
       </div>
       <div className="products-list__tab">
         {
-          tabValue === null || tabValue === 'all' ? products?.map((item) => {
+          tabValue === null || tabValue === 'all' ? context.products?.map((item) => {
             return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} description={item.description} id={item.id} pricePerUnit={item.pricePerUnit}/>
-          }) : products?.filter(product => product.category === tabValue)?.map((item) => {
+          }) :  context.products?.filter(product => product.category === tabValue)?.map((item) => {
             return <Card price={item.price} title={item.name} key={item.id} image={item.image} category={item.category} description={item.description} id={item.id} pricePerUnit={item.pricePerUnit}/>
           })
         }

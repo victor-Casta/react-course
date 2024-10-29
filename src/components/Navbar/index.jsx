@@ -91,7 +91,7 @@ function Navbar() {
         <section className="actions">
           <div className="search">
             <RiSearchLine className="search-icon" />
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" onChange={(event) => context.setSearchProduct(event.target.value)}/>
           </div>
           <CiHeart size={23} className="heart-icon" />
           <div className="shopping-car" onClick={() => context.openCartProducts()}>
