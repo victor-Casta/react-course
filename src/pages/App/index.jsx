@@ -11,6 +11,7 @@ import { MenSwear } from '../MenSwear'
 import { Sale } from '../Sale'
 import { Kids } from '../Kids'
 import { Discover } from '../Discover'
+import { Searched } from '../Searched'
 
 function AppRoutes() {
   let routes = useRoutes([
@@ -26,6 +27,7 @@ function AppRoutes() {
     { path: '/kids', element: <Kids /> },
     { path: '/discover', element: <Discover /> },
     { path: '/sale', element: <Sale /> },
+    { path: '/searched', element: <Searched /> },
     { path: '*', element: <NotFound /> },
   ])
   return routes

@@ -14,7 +14,7 @@ function MyOrders() {
       <Navbar />
       <Layout>
       <div className="back-icon__container mb-10 flex gap-3 items-center">
-        <h2 className='font-noto'>My orders</h2>
+        <h2>My orders</h2>
       </div>
         <main className="list-container__orders">
         {

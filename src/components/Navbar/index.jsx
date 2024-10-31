@@ -1,5 +1,6 @@
 import { useRef, useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { RiSearchLine } from "react-icons/ri"
 import { CiHeart } from "react-icons/ci"
 import { IoCartOutline } from "react-icons/io5"
@@ -91,7 +92,13 @@ function Navbar() {
         <section className="actions">
           <div className="search">
             <RiSearchLine className="search-icon" />
-            <input type="text" placeholder="Search" onChange={(event) => context.setSearchProduct(event.target.value)}/>
+            <Link to={'/searched'}>
+              <input
+                type="text"
+                placeholder="Search"
+                onChange={(event) => context.setSearchProduct(event.target.value)}
+              />
+            </Link>
           </div>
           <CiHeart size={23} className="heart-icon" />
           <div className="shopping-car" onClick={() => context.openCartProducts()}>
