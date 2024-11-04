@@ -101,7 +101,7 @@ function PrincipalContent() {
         </div>
       </div>
       <div className="second-content">
-        <a href='/fsf' className="click__section" ref={clickContainer}>
+        <a href='/menswear' className="click__section" ref={clickContainer}>
           <div className="puntero" ref={pointer}>
             shop <br />
             Now
