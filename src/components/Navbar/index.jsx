@@ -21,7 +21,7 @@ function Navbar() {
     } else {
       console.error('ref in menu is null');
     }
-  };
+  }
 
   const closeMenu = () => {
     if (mobileMenu.current) {
@@ -30,7 +30,13 @@ function Navbar() {
     } else {
       console.error('ref in menu is null')
     }
-  };
+  }
+
+  const handleSignOut = () => {
+    const stringifiedSignOut = JSON.stringify(true)
+    localStorage.setItem('sign-out', stringifiedSignOut)
+    context.setSignOut(true)
+  }
 
   const isActiveStyle = 'underline underline-offset-4 decoration-[#6D8450] decoration-2'
 
@@ -100,7 +106,8 @@ function Navbar() {
               />
             </Link>
           </div>
-          <CiHeart size={23} className="heart-icon" />
+          {/* implementar espacio para Sing out */}
+          <CiHeart size={23} className="heart-icon" onClick={() => handleSignOut()}/>
           <div className="shopping-car" onClick={() => context.openCartProducts()}>
             <IoCartOutline size={23} className="car-icon" />
             <span>{context.productsToCart.length}</span>

@@ -4,7 +4,33 @@ const BASE_URL_API = import.meta.env.VITE_BASE_API_URL
 
 export const ShoppingContext = createContext()
 
+export function initializeLocalStorage() {
+  let accountInLocalStorage = localStorage.getItem('account')
+  let signOutInLocalStorage = localStorage.getItem('sign-out')
+  let parsedAccount;
+  let parsedSignOut;
+
+  if (!accountInLocalStorage) {
+    localStorage.setItem('account', JSON.stringify({}))
+    parsedAccount = {}
+  } else {
+    parsedAccount = JSON.parse(accountInLocalStorage)
+  }
+
+  if (!signOutInLocalStorage) {
+    localStorage.setItem('sign-out', JSON.stringify(false))
+    parsedSignOut = false
+  } else {
+    parsedSignOut = JSON.parse(signOutInLocalStorage)
+  }
+
+  return { parsedAccount, parsedSignOut }
+}
+
 function ShoppingContextProvider({children}) {
+
+  const [ account, setAccount ] = useState({})
+  const [ signOut, setSignOut ] = useState(false)
 
   const [ count, setCount ] = useState(0)
 
@@ -62,7 +88,11 @@ function ShoppingContextProvider({children}) {
       products,
       categories,
       searchProduct,
-      setSearchProduct
+      setSearchProduct,
+      account,
+      setAccount,
+      signOut,
+      setSignOut
     }}>
       {children}
     </ShoppingContext.Provider>
